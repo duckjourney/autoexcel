@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Count Items by Time Interval</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+      <div class="input-group mb-0">
+        <div class="custom-file">
+          <label class="custom-file-label" for="file-input">Choose file</label>
+          <input type="file" class="form-control" id="file-input">
+        </div>
+      </div>
+      <div class="inputContainer">
+        <div class="input">
+          <input type="time" id="start-time" class="form-control mx-1" placeholder="Start time (e.g., 16:00)">
+        </div>
+        <div class="input">
+          <input type="time" id="end-time" class="form-control mx-1" placeholder="End time (e.g., 21:00)">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="processFile()">Process File</button>
+    </div>
+    <div class="bar"></div>
+    <div class="dataContainer">
+      <div id="results-table-container">
+        <table id="results-table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Interval</th>
+              <th>Actual Output</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <script src="script.js"></script>
+</body>
+</html>
