@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Count Items by Time Interval</title>
+  <title>Autoexcel</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
@@ -23,7 +23,9 @@
         </div>
       </div>
       <button class="btn btn-primary" onclick="processFile()">Process File</button>
+      <button class="btn btn-success" onclick="copyTableToClipboard()">Copy Table</button>
     </div>
+    <!-- <p>File name may not show, dont worry, its correctly loaded and i'm already working on a fix ;)</p> -->
     <div class="bar"></div>
     <div class="dataContainer">
       <div id="results-table-container">

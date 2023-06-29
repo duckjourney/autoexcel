@@ -76,3 +76,13 @@ function processFile() {
     reader.readAsArrayBuffer(file);
   }
 }
+
+function copyTableToClipboard() {
+  const table = document.getElementById('results-table');
+  const range = document.createRange();
+  range.selectNode(table);
+  window.getSelection().removeAllRanges();
+  window.getSelection().addRange(range);
+  document.execCommand('copy');
+  window.getSelection().removeAllRanges();
+}
