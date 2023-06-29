@@ -3,6 +3,7 @@
 <head>
   <title>Autoexcel</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.2/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -22,8 +23,10 @@
           <input type="time" id="end-time" class="form-control mx-1" placeholder="End time (e.g., 21:00)">
         </div>
       </div>
-      <button class="btn btn-primary" onclick="processFile()">Process File</button>
-      <button class="btn btn-success" onclick="copyTableToClipboard()">Copy Table</button>
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="processFile()">Process File</button>
+        <button class="btn btn-success" onclick="copyTableToClipboard()"><i class="fa-regular fa-clipboard"></i></button>
+      </div>
     </div>
     <!-- <p>File name may not show, dont worry, its correctly loaded and i'm already working on a fix ;)</p> -->
     <div class="bar"></div>
