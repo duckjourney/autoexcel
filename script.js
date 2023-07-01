@@ -16,6 +16,22 @@ function processFile() {
         raw: false,
       });
 
+      // Find the index of the "closed_time" column
+      const headerRow = dataRows[0];
+      let closedTimeColumnIndex = null;
+      for (let i = 0; i < headerRow.length; i++) {
+        if (headerRow[i] === "closed_time") {
+          closedTimeColumnIndex = i;
+          break;
+        }
+      }
+
+      // Ensure that the "closed_time" column was found
+      if (closedTimeColumnIndex === null) {
+        console.error("Could not find a column named 'closed_time'.");
+        return;
+      }
+
       // Parse start and end times
       const [startHours, startMinutes] = startTimeInput.value.split(":");
       const [endHours, endMinutes] = endTimeInput.value.split(":");
@@ -31,7 +47,7 @@ function processFile() {
       for (let i = 1; i < dataRows.length; i++) {
         const row = dataRows[i];
         if (row.length > 0) {
-          const dateTimeString = row[0];
+          const dateTimeString = row[closedTimeColumnIndex]; // Use the found index
           const [dateString, timeString] = dateTimeString.split(" ");
           const [hours, minutes] = timeString.split(":");
           const minutesTotal = parseInt(hours) * 60 + parseInt(minutes);
@@ -48,6 +64,9 @@ function processFile() {
           }
         }
       }
+
+      // Rest of your code for printing the results remains unchanged...
+
       // Print the results
       const resultsTbody = document.getElementById("results-tbody");
       for (let i = 0; i < counters.length; i++) {
