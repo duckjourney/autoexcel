@@ -43,11 +43,11 @@ function processFile() {
       const intervalCount = (endTotalMinutes - startTotalMinutes) / 15;
       const counters = new Array(intervalCount).fill(0);
 
-      // Iterate over each row in the Excel file (excluding header)
+      // Iterate over each row in the Excel file
       for (let i = 1; i < dataRows.length; i++) {
         const row = dataRows[i];
         if (row.length > 0) {
-          const dateTimeString = row[closedTimeColumnIndex]; // Use the found index
+          const dateTimeString = row[closedTimeColumnIndex];
           const [dateString, timeString] = dateTimeString.split(" ");
           const [hours, minutes] = timeString.split(":");
           const minutesTotal = parseInt(hours) * 60 + parseInt(minutes);
@@ -64,8 +64,6 @@ function processFile() {
           }
         }
       }
-
-      // Rest of your code for printing the results remains unchanged...
 
       // Print the results
       const resultsTbody = document.getElementById("results-tbody");
